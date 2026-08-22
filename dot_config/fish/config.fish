@@ -6,6 +6,9 @@ if status is-interactive
     ssh-add --apple-use-keychain ~/.ssh/github 2>/dev/null
 end
 
+## Homebrew
+fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
+
 ## flutter
 fish_add_path /opt/flutter/bin
 
