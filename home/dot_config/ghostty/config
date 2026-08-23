@@ -22,6 +22,10 @@ cursor-color = #c6c8d1
 selection-background = #272c42
 selection-foreground = #ffffff
 
+# 半透過
+background-opacity = 0.85
+background-blur-radius = 20
+
 # フォント
 font-family = JetBrains Mono
 font-size = 13
