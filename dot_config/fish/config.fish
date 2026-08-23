@@ -23,3 +23,15 @@ anyenv init - fish | source
 
 ## fzf
 fzf --fish | source
+
+## zoxide
+zoxide init fish | source
+
+## direnv
+direnv hook fish | source
+
+## eza
+alias ls 'eza'
+alias ll 'eza -la --git'
+alias la 'eza -a'
+alias lt 'eza -la --git --tree'
