@@ -1,6 +1,14 @@
 #!/bin/sh
 # GitHub readonly 用 gh ラッパー
-# 通常の gh とは別プロファイル(GH_CONFIG_DIR)で認証情報を持つ。
-# AI エージェントには GitHub の読み取り操作にこちらを使わせ、
-# 書き込み操作は通常の gh コマンド(権限プロンプト対象)に任せる。
-GH_CONFIG_DIR="$HOME/.config/ghro" exec gh "$@"
+# キーチェーン共有を避けるため、専用トークンファイルを使う
+TOKEN_FILE="${HOME}/.config/ghro/token"
+if [ ! -r "$TOKEN_FILE" ]; then
+  echo "ghro: missing token file: $TOKEN_FILE" >&2
+  echo "Create a fine-grained read-only PAT and run:" >&2
+  echo "  pbpaste > ~/.config/ghro/token && chmod 600 ~/.config/ghro/token" >&2
+  exit 1
+fi
+export GH_TOKEN
+GH_TOKEN="$(cat "$TOKEN_FILE")"
+export GH_CONFIG_DIR="${HOME}/.config/ghro"
+exec gh "$@"
