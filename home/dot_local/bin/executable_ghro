@@ -1,0 +1,6 @@
+#!/bin/sh
+# GitHub readonly 用 gh ラッパー
+# 通常の gh とは別プロファイル(GH_CONFIG_DIR)で認証情報を持つ。
+# AI エージェントには GitHub の読み取り操作にこちらを使わせ、
+# 書き込み操作は通常の gh コマンド(権限プロンプト対象)に任せる。
+GH_CONFIG_DIR="$HOME/.config/ghro" exec gh "$@"

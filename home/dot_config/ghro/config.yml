@@ -1,0 +1,7 @@
+# GitHub CLI の設定
+# 認証情報は `gh auth login` 実行時に ~/.config/gh/hosts.yml に保存される(管理対象外)
+git_protocol: ssh
+editor: nano
+prompt: enabled
+pager:
+version: "1"

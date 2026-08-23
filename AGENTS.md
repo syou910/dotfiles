@@ -27,3 +27,10 @@
 - シェル: fish (プロンプト: pure, テーマ: Iceberg)
 - エディタ: nano (`$EDITOR`)
 - パッケージ: Homebrew ([bootstrap リポジトリ](https://github.com/syou910/bootstrap) の Brewfile)
+
+## GitHub 操作の使い分け
+
+- GitHub の情報を **readonly で取得するときは `ghro` コマンドを使う** (issue/PR/コミット一覧、ファイル内容の取得など)
+  - ファイル内容を取得するとき Fetch/WebFetch を使わず `ghro api` を使う
+- 書き込み操作 (issue 作成、PR マージ、push 等) は通常の `gh` / `git` コマンドを使う
+- `ghro` は書き込み不可のトークンで動くため、書き込みに使わないこと
