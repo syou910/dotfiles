@@ -1,0 +1,9 @@
+{
+  "$schema": "https://opencode.ai/tui.json",
+  "keybinds": {
+    // エディタでプロンプト編集 (デフォルト: <leader>e)
+    "editor_open": "ctrl+g",
+    // ctrl+g を editor_open に譲るため home のみにする
+    "messages_first": "home"
+  }
+}

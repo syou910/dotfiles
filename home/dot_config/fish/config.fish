@@ -6,6 +6,9 @@ if status is-interactive
     ssh-add --apple-use-keychain ~/.ssh/github 2>/dev/null
 end
 
+## XDG
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+
 ## editor
 set -gx EDITOR nano
 set -gx VISUAL nano
