@@ -6,6 +6,10 @@ if status is-interactive
     ssh-add --apple-use-keychain ~/.ssh/github 2>/dev/null
 end
 
+## editor
+set -gx EDITOR nano
+set -gx VISUAL nano
+
 ## Homebrew
 fish_add_path /opt/homebrew/bin /opt/homebrew/sbin
 
