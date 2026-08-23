@@ -35,3 +35,9 @@ alias ls 'eza'
 alias ll 'eza -la --git'
 alias la 'eza -a'
 alias lt 'eza -la --git --tree'
+
+## トラディショナルなコマンドの代替
+alias cd z
+alias cat 'bat --paging=never'
+alias grep rg
+alias diff delta
