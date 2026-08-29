@@ -6,6 +6,9 @@ notify = ["/Users/kubo/.codex/computer-use/Codex Computer Use.app/Contents/Share
 approval_policy = "never"
 sandbox_mode = "workspace-write"
 sandbox_workspace_write.network_access = true
+model = "gpt-5.6-sol"
+model_reasoning_effort = "xhigh"
+service_tier = "default"
 
 [marketplaces.openai-bundled]
 source_type = "local"
@@ -46,31 +49,34 @@ enabled = true
 js_repl = false
 
 [mcp_servers.node_repl]
-args = []
 command = "/Applications/ChatGPT Classic.app/Contents/Resources/cua_node/bin/node_repl"
-startup_timeout_sec = 120
+startup_timeout_sec = 120.0
 
 [mcp_servers.node_repl.env]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.818.41705"
+BROWSER_USE_TINYSKY_ENABLED = "0"
+CODEX_CLI_PATH = "/Applications/ChatGPT Classic.app/Contents/Resources/codex"
+CODEX_HOME = "/Users/kubo/.codex"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
 NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT Classic.app/Contents/Resources/cua_node/lib/node_modules"
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT Classic.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/kubo/.codex:/Applications/ChatGPT Classic.app/Contents/Resources/cua_node/lib/node_modules"
-CODEX_HOME = "/Users/kubo/.codex"
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-BROWSER_USE_TINYSKY_ENABLED = "0"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
-BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.818.41705"
 NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/kubo/.codex/plugins/cache/openai-bundled/browser/26.818.41705/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
-CODEX_CLI_PATH = "/Applications/ChatGPT Classic.app/Contents/Resources/codex"
 
 [mcp_servers.computer-use]
 command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
 args = ["mcp"]
 cwd = "."
 enabled = false
+
+[mcp_servers.hadron]
+command = "/Users/kubo/.local/bin/hadron"
+args = ["mcp", "serve"]
 
 [desktop]
 conversationDetailMode = "STEPS_PROSE"
@@ -84,3 +90,6 @@ trust_level = "trusted"
 
 [projects."/Users/kubo/Projects/bootstrap"]
 trust_level = "trusted"
+
+[notice]
+hide_rate_limit_model_nudge = true

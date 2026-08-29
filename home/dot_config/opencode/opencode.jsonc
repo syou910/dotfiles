@@ -3,7 +3,20 @@
   "permission": {
     "bash": {
       // GitHub readonly 用ラッパーは許可(書き込み不可のトークン)
-      "ghro*": "allow"
+      "ghro*": "allow",
+      // Issue#48 実機確認用: 承認ゲート検証
+      "git *": "allow",
+      "git push *": "deny"
+    }
+  },
+  "mcp": {
+    "hadron": {
+      "type": "local",
+      "command": [
+        "/Users/kubo/.local/bin/hadron",
+        "mcp",
+        "serve"
+      ]
     }
   }
 }

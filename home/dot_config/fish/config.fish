@@ -48,3 +48,8 @@ alias cd z
 alias cat 'bat --paging=never'
 alias grep rg
 alias diff delta
+
+
+# >>> hadron-proxy (opencode) >>>
+set -gx OPENCODE_CONFIG_CONTENT '{"provider":{"anthropic":{"options":{"baseURL":"http://127.0.0.1:8768/v1"}}}}'
+# <<< hadron-proxy (opencode) <<<
