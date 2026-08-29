@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "fields": [
+    "quota_5h",
+    "quota_weekly",
+    "quota_monthly"
+  ]
+}
