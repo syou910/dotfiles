@@ -1,0 +1,18 @@
+# Hadron 設定（chezmoi 管理）。すべてのキーは省略可（省略時は組込み既定）。
+# 実ファイル: ~/.config/hadron/config.toml（$XDG_CONFIG_HOME 尊重）。
+# 詳細: https://github.com/anomalyco/hadron の config.example.toml
+
+[proxy]
+# ローカルダッシュボード（opt-in・127.0.0.1 のみ・外部リソース読込ゼロ）。
+# 有効化すると各 proxy の /dashboard を公開する（codex=8766 / opencode=8768）。
+dashboard = true
+
+# リクエスト単位の軽量 capture（マーカー id・トークン数・メタのみ・原文非保存）。
+# dashboard の「Recent Requests」表と $ 換算の一次ソース。
+capture = true
+
+# レスポンス usage 観測タップ（バイト不変・本文非保存）。キャッシュ hit 実測パネルに使う。
+usage = true
+
+# 時系列メトリクス（client 別スナップショット）。hadron gain --history で閲覧。
+metrics_history = true
