@@ -4,11 +4,21 @@ notify = ["/Users/kubo/.codex/computer-use/Codex Computer Use.app/Contents/Share
 # - ワークスペース内のファイル操作・コマンドは許可プロンプトなしで実行
 # - サンドボックス外への書き込みやsudo等は自動拒否(セーフティネット)
 approval_policy = "never"
-sandbox_mode = "workspace-write"
-sandbox_workspace_write.network_access = true
+default_permissions = "git-write"
 model = "gpt-5.6-sol"
 model_reasoning_effort = "xhigh"
 service_tier = "default"
+
+[permissions.git-write]
+description = "Workspace editing with Git metadata access in any workspace root"
+extends = ":workspace"
+
+[permissions.git-write.filesystem.":workspace_roots"]
+".git" = "write"
+
+[permissions.git-write.network]
+enabled = true
+mode = "full"
 
 [marketplaces.openai-bundled]
 source_type = "local"
@@ -79,7 +89,7 @@ command = "/Users/kubo/.local/bin/hadron"
 args = ["mcp", "serve"]
 
 [desktop]
-conversationDetailMode = "STEPS_PROSE"
+conversationDetailMode = "STEPS_COMMANDS"
 ambient-suggestions-enabled = true
 
 [desktop.open-in-target-preferences]
@@ -93,3 +103,8 @@ trust_level = "trusted"
 
 [notice]
 hide_rate_limit_model_nudge = true
+
+[hooks.state]
+
+[hooks.state."/Users/kubo/.codex/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:10c5bae9d70313443872c061f7f55be6a517a6efeb50e47989208b728f657807"
