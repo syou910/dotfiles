@@ -9,7 +9,7 @@ disk: 60
 
 # Size of the memory in GiB to be allocated to the virtual machine.
 # Default: 2
-memory: 4
+memory: 8
 
 # Container runtime to be used (docker, containerd).
 # Default: docker
