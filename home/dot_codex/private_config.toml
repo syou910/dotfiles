@@ -5,8 +5,9 @@ notify = ["/Users/kubo/.codex/computer-use/Codex Computer Use.app/Contents/Share
 # - サンドボックス外への書き込みやsudo等は自動拒否(セーフティネット)
 approval_policy = "never"
 default_permissions = "git-write"
-model = "gpt-5.6-sol"
-model_reasoning_effort = "xhigh"
+# Astra はユーザーが明示指定した場合のみ使用する (例: codex -m gpt-6-astra)。
+model = "gpt-6.1-sol"
+model_reasoning_effort = "medium"
 service_tier = "default"
 
 [permissions.git-write]
@@ -108,3 +109,10 @@ hide_rate_limit_model_nudge = true
 
 [hooks.state."/Users/kubo/.codex/hooks.json:pre_tool_use:0:0"]
 trusted_hash = "sha256:10c5bae9d70313443872c061f7f55be6a517a6efeb50e47989208b728f657807"
+
+# Native subagents: cap excludes the primary orchestrator.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 8
+default_subagent_model = "gpt-6.1-sol"
+default_subagent_reasoning_effort = "medium"

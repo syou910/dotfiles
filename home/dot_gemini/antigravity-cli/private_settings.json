@@ -1,0 +1,15 @@
+{
+  "agentMode": "auto",
+  "allowNonWorkspaceAccess": false,
+  "altScreenMode": "never",
+  "colorScheme": "tokyo night",
+  "model": "Gemini 3.8 Flash (Medium)",
+  "permissions": {
+    "allow": []
+  },
+  "trustedWorkspaces": [
+    "/Users/kubo/Projects/coterium"
+  ],
+  "enableTerminalSandbox": true,
+  "toolPermission": "proceed-in-sandbox"
+}
