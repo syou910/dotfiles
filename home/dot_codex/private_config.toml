@@ -133,6 +133,13 @@ hide_rate_limit_model_nudge = true
 [hooks.state."/Users/kubo/.codex/hooks.json:pre_tool_use:0:0"]
 trusted_hash = "sha256:10c5bae9d70313443872c061f7f55be6a517a6efeb50e47989208b728f657807"
 
+# mosh+tmux でスクロールバックを保持しマウスを掴まない(inline モード)
+[tui]
+# Usage limits show remaining capacity; unavailable items are omitted.
+# Estimated USD cost is available only for supported Enterprise threads.
+status_line = ["context-used", "five-hour-limit", "weekly-limit", "estimated-thread-cost", "model-with-reasoning", "current-dir"]
+alternate_screen = "never"
+
 [plugins."sites@openai-bundled"]
 enabled = true
 
