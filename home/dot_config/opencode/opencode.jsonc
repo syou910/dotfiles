@@ -1,6 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "permission": {
+    // Claude Code の auto mode 相当: 既定で許可し、明示 deny のみ拒否
+    "*": "allow",
     "bash": {
       // GitHub readonly 用ラッパーは許可(書き込み不可のトークン)
       "ghro*": "allow",
